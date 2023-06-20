@@ -9,6 +9,8 @@ IMAGE_NAME=linusyong/${BUILD_NAME}
 echo "Starting Docker build..." | tee -a build-${BUILD_NAME}.log
 
 docker build \
+  --no-cache \
+  --progress=plain \
   . -f Dockerfile.python3-git \
   -t ${IMAGE_NAME}-docker-build \
   2>&1 | tee -a build-${BUILD_NAME}.log

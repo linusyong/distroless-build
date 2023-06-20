@@ -1,2 +1,5 @@
 contariner_registry.json
 grype-cache
+build-python3-git.log
+*.tar
+*.json
