@@ -29,7 +29,7 @@ docker run -it --rm \
   --dockerfile /workdir/Dockerfile.python3-git \
   --context /workdir \
   --snapshot-mode=redo \
-  --destination=${IMAGE_NAME} \
+  --destination=${IMAGE_NAME}-kaniko-build \
   --tar-path=/workdir/${BUILD_NAME}-kaniko-build.tar \
   --no-push \
   | tee -a build-${BUILD_NAME}.log
