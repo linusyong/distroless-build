@@ -1,8 +1,6 @@
-FROM bitnami/git:2.41.0-debian-11-r6 as builder
-
-FROM gcr.io/distroless/python3-debian11:debug as release
-COPY --from=builder /opt/bitnami/git /opt/bitnami/git
-COPY --from=builder /usr/lib/x86_64-linux-gnu/libcurl.so.4 /usr/lib/x86_64-linux-gnu/libcurl.so.4
-COPY --from=builder /usr/lib/x86_64-linux-gnu/libnghttp2.so.14 /usr/lib/x86_64-linux-gnu/libnghttp2.so.14
-
-ENTRYPOINT ["sh"]
+FROM alpine:3.18.2
+RUN apk add --no-cache --upgrade git python3 && \
+    addgroup -g 10000 userXX && \
+    adduser -D -u 10000 userXX -G userXX
+USER userXX
+ENTRYPOINT ["sh", "-l"]

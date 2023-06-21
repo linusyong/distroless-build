@@ -1,8 +1,10 @@
 contents:
+  keyring:
+    - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
   repositories:
-    - https://dl-cdn.alpinelinux.org/alpine/v3.18/main
+    - https://packages.wolfi.dev/os
   packages:
-    - alpine-base
+    - wolfi-base
     - busybox
     - python3
     - git
